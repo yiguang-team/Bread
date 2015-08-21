@@ -1,0 +1,18 @@
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="ehcache.xsd">
+	<!-- <cacheManagerPeerProviderFactory -->
+	<!-- class="net.sf.ehcache.distribution.RMICacheManagerPeerProviderFactory" -->
+	<!-- properties="peerDiscovery=manual, -->
+	<!-- rmiUrls=//localhost:40002/UserCache|//localhost:40003/UserCache" /> -->
+
+	<cacheManagerPeerProviderFactory
+		class="net.sf.ehcache.distribution.RMICacheManagerPeerProviderFactory"
+		properties="peerDiscovery=automatic, multicastGroupAddress=230.0.0.1,
+		  multicastGroupPort=4446, timeToLive=1,hostName=192.168.1.42" />
+	  
+	<cacheManagerPeerListenerFactory
+		class="net.sf.ehcache.distribution.RMICacheManagerPeerListenerFactory"
+		properties="hostName=192.168.1.42, port=40001,
+	  socketTimeoutMillis=2000" />
+
+</ehcache>
