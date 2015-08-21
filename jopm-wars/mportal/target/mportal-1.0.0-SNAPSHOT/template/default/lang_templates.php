@@ -1,7 +1,0 @@
-<?php
-
-$languages = array(
-
-);
-
-?>
